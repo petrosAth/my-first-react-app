@@ -1,34 +1,69 @@
-function ListItem(props) {
-  return <li>{props.animal}</li>;
-}
+import { v4 as uuid } from 'uuid';
 
-function List(props) {
-  if (!props.animals) {
-    return <div>Loading...</div>;
+const App = [];
+
+App.Animals = () => {
+  function ListItem(props) {
+    return <li>{props.animal}</li>;
   }
 
-  if (props.animals.length === 0) {
-    return <div>There are no animals in the list!</div>;
+  function List(props) {
+    if (!props.animals) {
+      return <div>Loading...</div>;
+    }
+
+    if (props.animals.length === 0) {
+      return <div>There are no animals in the list!</div>;
+    }
+
+    return (
+      <ul>
+        {props.animals.map((animal) => {
+          return animal.startsWith('L') && <ListItem key={animal} animal={animal} />;
+        })}
+      </ul>
+    );
   }
 
-  return (
-    <ul>
-      {props.animals.map((animal) => {
-        return animal.startsWith('L') && <ListItem key={animal} animal={animal} />;
-      })}
-    </ul>
-  );
-}
+  function App() {
+    const animalsList = ['Lion', 'Tiger', 'Shark', 'Leopard', 'Sheep'];
 
-function App() {
-  const animalsList = ['Lion', 'Tiger', 'Shark', 'Leopard', 'Sheep'];
+    return (
+      <div>
+        <h1>Animals: </h1>
+        <List animals={animalsList} />
+      </div>
+    );
+  }
 
-  return (
-    <div>
-      <h1>Animals: </h1>
-      <List animals={animalsList} />
-    </div>
-  );
-}
+  return App();
+};
+
+App.Todos = () => {
+  const todos = [
+    { task: 'Mow the yard', id: uuid() },
+    { task: 'Work on Odin Projects', id: uuid() },
+    { task: 'Feed the cat', id: uuid() },
+  ];
+
+  function TodoList() {
+    return (
+      <>
+        <h1>Todo List</h1>
+        <ul>
+          {todos.map((todo) => {
+            return (
+              <>
+                <li key={todo.id}>{todo.task}</li>
+              </>
+            );
+          })}
+        </ul>
+      </>
+    );
+  }
+
+  return TodoList();
+};
 
 export { App };
