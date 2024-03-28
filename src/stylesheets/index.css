@@ -1,0 +1,9 @@
+:root {
+  --clr-background: #000;
+  --clr-font-light: #fff;
+}
+
+html {
+  background-color: var(--clr-background);
+  color: var(--clr-font-light);
+}
