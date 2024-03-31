@@ -1,0 +1,37 @@
+.colored-button {
+  background-color: white;
+  border-radius: 12px;
+  border: 3px solid black;
+  color: black;
+}
+
+.active {
+  border: 3px double black;
+  color: white;
+}
+
+.active--pink {
+  background-color: pink;
+  color: black;
+}
+
+.active--red {
+  background-color: red;
+}
+
+.active--orange {
+  background-color: orange;
+  color: black;
+}
+
+.active--green {
+  background-color: green;
+}
+
+.active--blue {
+  background-color: blue;
+}
+
+.active--purple {
+  background-color: purple;
+}

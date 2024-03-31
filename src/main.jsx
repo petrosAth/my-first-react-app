@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom/client';
 import Greeting from './Greeting.jsx';
 import { List } from './List.jsx';
 import { App } from './ComponentList.jsx';
+import ColoredButtons from './ColoredButtons.jsx';
 import './stylesheets/normalize.css';
 import './stylesheets/index.css';
+import './stylesheets/buttons.css';
 
 App.Button.defaultProps = {
   text: 'Click Me!',
@@ -23,5 +25,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App.Animals />
     <App.Todos />
     <App.Button text="Visit Google" bgColor="cyan" handleClick={handleButtonClick} />
+    <ColoredButtons />
   </React.StrictMode>,
 );
