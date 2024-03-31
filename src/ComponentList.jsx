@@ -52,11 +52,7 @@ App.Todos = () => {
         <h1>Todo List</h1>
         <ul>
           {todos.map((todo) => {
-            return (
-              <>
-                <li key={todo.id}>{todo.task}</li>
-              </>
-            );
+            return <li key={todo.id}>{todo.task}</li>;
           })}
         </ul>
       </>
