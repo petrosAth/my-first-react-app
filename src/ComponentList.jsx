@@ -66,4 +66,24 @@ App.Todos = () => {
   return TodoList();
 };
 
+App.Button = ({ text, bgColor, fontSize, padding = '20px', handleClick }) => {
+  const style = {
+    backgroundColor: bgColor,
+    fontSize: fontSize,
+    padding: padding,
+  };
+
+  const button = () => {
+    return (
+      <>
+        <button onClick={() => handleClick('http://www.googl.com')} style={style}>
+          {text}
+        </button>
+      </>
+    );
+  };
+
+  return button();
+};
+
 export { App };
