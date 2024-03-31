@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import Greeting from './Greeting.jsx';
 import { List } from './List.jsx';
 import { App } from './ComponentList.jsx';
-import './stylesheets/normalizze.css';
+import './stylesheets/normalize.css';
 import './stylesheets/index.css';
 
 App.Button.defaultProps = {
